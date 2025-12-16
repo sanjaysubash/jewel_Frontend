@@ -34,7 +34,38 @@
     hamburger.addEventListener('click', () => {
       const open = nav.classList.toggle('open');
       hamburger.setAttribute('aria-expanded', String(open));
+      if (open) {
+        // Move focus to first link for accessibility
+        const firstLink = nav.querySelector('a');
+        firstLink && firstLink.focus();
+      }
     });
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('open')) {
+        nav.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.focus();
+      }
+    });
+  }
+
+  // Fade-in on scroll using IntersectionObserver
+  const animated = Array.from(document.querySelectorAll('[data-animate]'));
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!prefersReduced && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+    animated.forEach(el => io.observe(el));
+  } else {
+    // Fallback: show immediately
+    animated.forEach(el => el.classList.add('in'));
   }
 
   // Bestsellers data (use existing images only to avoid 404s)
