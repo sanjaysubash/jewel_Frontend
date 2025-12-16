@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Timeless Jewellery</title>
+  <meta name="description" content="Luxury jewellery eCommerce – elegant, modern, and timeless designs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/layout.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
+  
+  <!-- Load model-viewer for GLB rendering -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="top-strip">
+      <div class="social">
+        <a aria-label="Instagram" href="#" class="icon ig" title="Instagram">
+          <img src="/assets/icons/instagram.svg" alt="Instagram" />
+        </a>
+        <a aria-label="Facebook" href="#" class="icon fb" title="Facebook">
+          <img src="/assets/icons/facebook.svg" alt="Facebook" />
+        </a>
+      </div>
+      <div class="logo">Timeless</div>
+      <form class="search" role="search">
+        <input type="search" placeholder="Search for Earrings..." aria-label="Search jewellery" />
+      </form>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+      <ul>
+        <li><a href="#">All Jewellery</a></li>
+        <li><a href="#">Gold</a></li>
+        <li><a href="#">Silver</a></li>
+        <li><a href="#">Gifting</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero hero--split" id="hero" aria-label="Featured collection">
+      <div class="hero-bg">
+        <picture>
+          <img src="/assets/images/Beige Minimalist Mother's Day Sale Promotional Banner (1).png" alt="Elegant jewellery background" />
+        </picture>
+      </div>
+      <div class="hero-wrap container">
+        <div class="hero-col hero-col--content">
+          <div class="eyebrow">New Season • Winter Love</div>
+          <h1 class="hero-title">Because You Deserve to Feel Timeless.</h1>
+          <p class="hero-subtext">Discover pieces crafted to elevate everyday moments. From understated elegance to modern minimal, our designs are made to last and meant to be loved.</p>
+          <div class="hero-actions">
+            <a href="#bestsellers" class="btn btn-primary">Explore the Elegance</a>
+            <a href="#collectionGrid" class="btn btn-outline">Shop Collections</a>
+          </div>
+        </div>
+        <div class="hero-col hero-col--visual" aria-label="Product preview">
+          <div class="visual-card">
+            <div class="visual-media">
+              <model-viewer
+                src="/assets/images/diamond_ring_3d_print_ready.glb"
+                alt="Diamond ring 3D model"
+                camera-controls
+                auto-rotate
+                autoplay
+                shadow-intensity="1"
+                ar
+                ar-modes="webxr scene-viewer quick-look"
+                exposure="1"
+                interaction-prompt="none"
+                poster="/assets/images/videoframe_22034.png"
+                style="--poster-color: transparent; background: transparent;"
+              ></model-viewer>
+            </div>
+            <div class="visual-meta">
+              <div class="meta-line">
+                <span class="meta-title">The Aurora Halo</span>
+                <span class="meta-sub">18kt White Gold • Lab-grown Diamond</span>
+              </div>
+              <div class="meta-cta">
+                <a href="#bestsellers" class="link">View details</a>
+                <span class="dot"></span>
+                <button type="button" class="link" aria-label="View in AR">View in AR</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bestsellers container" id="bestsellers">
+      <div class="section-header">
+        <h2>Bestsellers</h2>
+        <div class="tabs" role="tablist" aria-label="Categories">
+          <button class="tab active" role="tab" aria-selected="true" data-category="rings">Rings</button>
+          <button class="tab" role="tab" aria-selected="false" data-category="earrings">Earrings</button>
+          <button class="tab" role="tab" aria-selected="false" data-category="pendants">Pendants</button>
+          <button class="tab" role="tab" aria-selected="false" data-category="bracelets">Bracelets</button>
+          <button class="tab" role="tab" aria-selected="false" data-category="bangles">Bangles</button>
+        </div>
+      </div>
+      <div class="products-grid" id="productsGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="recently-viewed" id="recentlyViewed">
+      <div class="container">
+        <h2>Recently Viewed</h2>
+        <div class="rv-scroller" id="rvScroller">
+          <button class="rv-nav prev" aria-label="Scroll left">&#10094;</button>
+          <div class="rv-track" id="rvTrack" tabindex="0" aria-label="Recently viewed items"></div>
+          <button class="rv-nav next" aria-label="Scroll right">&#10095;</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="personalized-gift" id="personalizedGift">
+      <div class="gift-banner">
+        <img src="/assets/images/hero.jpg" alt="Personalized gifts banner" />
+        <div class="gift-content container">
+          <h2>Make it extra special with personalised gift notes</h2>
+          <div class="gift-ctas">
+            <a href="#" class="btn btn-outline">Shop Under ₹10000</a>
+            <a href="#" class="btn btn-outline">Shop Under ₹20000</a>
+            <a href="#" class="btn btn-outline">Shop Under ₹30000</a>
+            <a href="#" class="btn btn-primary">E-Gift Cards</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="new-arrivals container" id="newArrivals">
+      <div class="na-text">
+        <h2>Winter Love Has Arrived</h2>
+        <p>Introducing Lab Grown Silver and Gold</p>
+        <p class="lead">Sustainable sparkle meets modern craftsmanship. Explore pieces designed for style and substance.</p>
+      </div>
+      <div class="na-images">
+        <img src="/assets/images/11.jpeg" alt="New arrivals necklace" />
+        <img src="/assets/images/The Aurora Halo blends the sleek, graceful arches….jpeg" alt="New arrivals bracelet" />
+      </div>
+    </section>
+
+    <section class="collection-grid container" id="collectionGrid">
+      <h2>Explore Our Collection</h2>
+      <div class="grid">
+        <a class="grid-item" href="#" style="--bg:url(&quot;/assets/images/Beige Minimalist Mother&#39;s Day Sale Promotional Banner (1).png&quot;);"><span>Rings</span></a>
+        <a class="grid-item" href="#" style="--bg:url(&quot;/assets/images/Beige Minimalist Mother&#39;s Day Sale Promotional Banner (1).png&quot;);"><span>Earrings</span></a>
+        <a class="grid-item" href="#" style="--bg:url(&quot;/assets/images/Beige Minimalist Mother&#39;s Day Sale Promotional Banner (1).png&quot;);"><span>Pendants</span></a>
+        <a class="grid-item" href="#" style="--bg:url(&quot;/assets/images/Beige Minimalist Mother&#39;s Day Sale Promotional Banner (1).png&quot;);"><span>Bracelets</span></a>
+        <a class="grid-item" href="#" style="--bg:url(&quot;/assets/images/Beige Minimalist Mother&#39;s Day Sale Promotional Banner (1).png&quot;);"><span>Necklace</span></a>
+        <a class="grid-item" href="#" style="--bg:url(&quot;/assets/images/Beige Minimalist Mother&#39;s Day Sale Promotional Banner (1).png&quot;);"><span>Bangles</span></a>
+        <a class="grid-item" href="#" style="--bg:url(&quot;/assets/images/Beige Minimalist Mother&#39;s Day Sale Promotional Banner (1).png&quot;);"><span>Accessories</span></a>
+      </div>
+    </section>
+
+    <section class="occasion-gifts container" id="occasionGifts">
+      <h2>Occasion Gifts</h2>
+      <div class="cards">
+        <article class="card">
+          <img src="/assets/images/hero.jpg" alt="Birthday gifts" />
+          <div class="card-content">
+            <h3>Birthday</h3>
+            <p>Celebrate their day with sparkling surprises.</p>
+            <a href="#" class="btn btn-outline">Shop Birthday</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="/assets/images/hero.jpg" alt="Anniversary gifts" />
+          <div class="card-content">
+            <h3>Anniversary</h3>
+            <p>Mark milestones with timeless elegance.</p>
+            <a href="#" class="btn btn-outline">Shop Anniversary</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="/assets/images/hero.jpg" alt="Engagement gifts" />
+          <div class="card-content">
+            <h3>Engagement</h3>
+            <p>Say yes to sophistication and sparkle.</p>
+            <a href="#" class="btn btn-outline">Shop Engagement</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="ethos container" id="ethos">
+      <div class="ethos-header">
+        <h2>Every Shape. Every Sparkle.</h2>
+        <p>We responsibly source materials and craft with care to bring you jewellery that looks beautiful and feels good to wear.</p>
+      </div>
+      <ul class="ethos-icons" aria-label="Brand ethos">
+        <li>
+          <div class="icon-circle">925</div>
+          <span>925 Sterling Silver</span>
+        </li>
+        <li>
+          <div class="icon-circle">✧</div>
+          <span>Certified Diamonds</span>
+        </li>
+        <li>
+          <div class="icon-circle">✓</div>
+          <span>Ethical Sourcing</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <h2>Voices of Our Happy Customers</h2>
+        <div class="t-carousel" aria-roledescription="carousel">
+          <div class="t-track" id="tTrack" aria-live="polite">
+            <!-- Slides injected by JS -->
+          </div>
+          <div class="t-dots" id="tDots" role="tablist" aria-label="Testimonials navigation"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="brand">
+        <h3>Timeless</h3>
+        <p>Timeless crafts elegant, modern jewellery designed to elevate your everyday. From delicate rings to statement pieces, we bring you quality without compromise.</p>
+      </div>
+      <nav class="footer-nav">
+        <h4>Our Collection</h4>
+        <ul>
+          <li><a href="#">Rings</a></li>
+          <li><a href="#">Earrings</a></li>
+          <li><a href="#">Pendants</a></li>
+          <li><a href="#">Bracelets</a></li>
+          <li><a href="#">Bangles</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-nav">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Stores</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-nav">
+        <h4>Policies</h4>
+        <ul>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="copyright">
+      <p>© 2025 Timeless Jewellery. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
